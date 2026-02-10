@@ -36,13 +36,9 @@ const Navbar = () => (
         <a href="#pricing" className="hover:text-white transition-colors">Стоимость</a>
       </div>
 <a
-  href="https://buy.stripe.com/6oU4gsd5fcBFgHc09U0ZW07"
-  target="_blank"
-  rel="noreferrer"
-  className="w-full sm:w-auto px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-black text-lg transition-all transform hover:scale-105 shadow-2xl"
+  href="#pricing"
 >
-  Занять место на 16-17 февраля
-  <ArrowRight size={20} />
+  Участвовать
 </a>
     </div>
   </nav>
@@ -496,7 +492,6 @@ const Pricing = () => (
         <button onClick={goToCheckout} className="w-full py-8 bg-black text-white rounded-3xl font-black text-3xl hover:bg-gray-800 transition-all shadow-2xl shadow-black/20 transform hover:scale-[1.02]">
           Зарегистрироваться
         </button>
-        <p className="mt-8 text-gray-400 font-bold uppercase tracking-widest text-xs">Осталось 12 мест из 50</p>
       </div>
     </div>
   </section>
@@ -592,13 +587,7 @@ const STRIPE_PAYMENT_LINK = (import.meta as any).env?.VITE_STRIPE_PAYMENT_LINK a
 const TELEGRAM_LINK = (import.meta as any).env?.VITE_TELEGRAM_LINK as string | undefined;
 
 const goToCheckout = () => {
-  if (STRIPE_PAYMENT_LINK && STRIPE_PAYMENT_LINK.startsWith('http')) {
-    window.location.href = STRIPE_PAYMENT_LINK;
-    return;
-  }
-  // If link not set, just scroll to pricing and keep user on page
-  const el = document.getElementById('pricing');
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
+  window.open("https://buy.stripe.com/6oU4gsd5fcBFgHc09U0ZW07", "_blank");
 };
 
 const App: React.FC = () => {
