@@ -35,11 +35,15 @@ const Navbar = () => (
         <a href="#program" className="hover:text-white transition-colors">Программа</a>
         <a href="#pricing" className="hover:text-white transition-colors">Стоимость</a>
       </div>
-      href="https://buy.stripe.com/6oU4gsd5fcBFgHc09U0ZW07"
-target="_blank"
-rel="noreferrer"
-        Участвовать
-      </a>
+<a
+  href="https://buy.stripe.com/6oU4gsd5fcBFgHc09U0ZW07"
+  target="_blank"
+  rel="noreferrer"
+  className="w-full sm:w-auto px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-black text-lg transition-all transform hover:scale-105 shadow-2xl"
+>
+  Занять место на 16-17 февраля
+  <ArrowRight size={20} />
+</a>
     </div>
   </nav>
 );
