@@ -35,11 +35,9 @@ const Navbar = () => (
         <a href="#program" className="hover:text-white transition-colors">Программа</a>
         <a href="#pricing" className="hover:text-white transition-colors">Стоимость</a>
       </div>
-      <a 
-        hhref="https://buy.stripe.com/6oU4gsd5fcBFgHc09U0ZW07"
+      href="https://buy.stripe.com/6oU4gsd5fcBFgHc09U0ZW07"
 target="_blank"
 rel="noreferrer"
-      >
         Участвовать
       </a>
     </div>
