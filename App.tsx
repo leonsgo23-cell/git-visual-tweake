@@ -127,18 +127,18 @@ const LunarSection = () => (
           </div>
           <div className="p-8 bg-gray-900 border border-white/5 rounded-3xl space-y-4 hover:border-blue-500/30 transition-all">
             <Sun className="text-orange-400" />
-            <h5 className="font-bold">Энергия</h5>
-            <p className="text-gray-400 text-sm">Февраль — время пробуждения от зимней спячки. Мы ловим волну первой весенней активности.</p>
+            <h5 className="font-bold">Лунный календарь</h5>
+            <p className="text-gray-400 text-sm">Планирование по фазам Луны помогает синхронизировать действия с естественными циклами энергии и продуктивности.</p>
           </div>
           <div className="p-8 bg-gray-900 border border-white/5 rounded-3xl space-y-4 hover:border-blue-500/30 transition-all">
             <BrainCircuit className="text-purple-400" />
-            <h5 className="font-bold">AI Синхронизация</h5>
-            <p className="text-gray-400 text-sm">Мы учим ИИ работать не просто по календарю, а по вашим внутренним пикам продуктивности.</p>
+            <h5 className="font-bold">Помощник с искусственным интеллектом</h5>
+            <p className="text-gray-400 text-sm">Будет знать ваши цели, напоминать о приоритетах и не даст вам слиться с намеченного пути.</p>
           </div>
           <div className="p-8 bg-gray-900 border border-white/5 rounded-3xl space-y-4 hover:border-blue-500/30 transition-all">
             <Calendar className="text-green-400" />
-            <h5 className="font-bold">Дисциплина</h5>
-            <p className="text-gray-400 text-sm">Привязка к лунным фазам создает естественный дедлайн, который невозможно отодвинуть.</p>
+            <h5 className="font-bold">Мощная связка</h5>
+            <p className="text-gray-400 text-sm">Осознание своих желаний, энергия вселенной и возможности искусственного интеллекта.</p>
           </div>
         </div>
       </div>
@@ -190,19 +190,25 @@ const RealProblem = () => (
           <h3 className="text-white font-bold mb-8 text-3xl">Проблема в отсутствии внешней системы, которая:</h3>
           <ul className="space-y-6">
             <li className="flex items-center gap-4 text-white text-lg">
-              <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> удерживает фокус на главном
+              <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> Видит всю систему целиком
             </li>
             <li className="flex items-center gap-4 text-white text-lg">
-              <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> не даёт вам перескакивать между направлениями
+              <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> Между задачами и направлениями
             </li>
             <li className="flex items-center gap-4 text-white text-lg">
-              <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> ежедневно возвращает к годовому плану
+              <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> Удерживает фокус на главном
+            </li>
+            <li className="flex items-center gap-4 text-white text-lg">
+              <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> Анализирует твои результаты
+            </li>
+            <li className="flex items-center gap-4 text-white text-lg">
+              <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> Даёт рекомендации для следующих шагов
             </li>
           </ul>
         </div>
         <p className="leading-relaxed">
-          Предприниматель остаётся один на один с хаосом. <br />
-          Даже если у него есть ChatGPT — он не превращён в персонального ассистента, который управляет вниманием и приоритетами.
+          Чтобы не оставаться один на один с хаосом. <br />
+          Персональный ассистент на базе искусственного интеллекта управляет вниманием и приоритетами.
         </p>
       </div>
     </div>
@@ -598,13 +604,13 @@ const App: React.FC = () => {
       <Navbar />
       <Hero />
       <LunarSection />
-      <Symptoms />
       <RealProblem />
       <WhatYouGet />
       <Schedule />
       <Outcomes />
       <WhyAI />
       <Audience />
+      <Symptoms />
       <Pricing />
       <FAQ />
       <Footer />
