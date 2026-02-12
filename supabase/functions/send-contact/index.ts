@@ -1,11 +1,13 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
+const TELEGRAM_BOT_TOKEN = Deno.env.get('TELEGRAM_BOT_TOKEN');
+const TELEGRAM_CHAT_ID = Deno.env.get('TELEGRAM_CHAT_ID');
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -22,7 +24,6 @@ serve(async (req) => {
       });
     }
 
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return new Response(JSON.stringify({ error: 'Некорректный email' }), {
@@ -38,32 +39,42 @@ serve(async (req) => {
       });
     }
 
-    const res = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-      },
-      body: JSON.stringify({
-        from: 'Фокус с Аи <onboarding@resend.dev>',
-        to: ['aleks5maridi@gmail.com'],
-        subject: 'Новая заявка с сайта "Фокус с Аи"',
-        html: `
-          <h2>Новая заявка с сайта</h2>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Телефон:</strong> ${phone}</p>
-          <p><em>Отправлено с сайта "Фокус с Аи"</em></p>
-        `,
-      }),
-    });
+    // Save to database
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-    if (!res.ok) {
-      const errorData = await res.text();
-      console.error('Resend error:', errorData);
-      return new Response(JSON.stringify({ error: 'Ошибка отправки письма' }), {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+    const { error: dbError } = await supabase
+      .from('contact_submissions')
+      .insert({ email, phone });
+
+    if (dbError) {
+      console.error('DB error:', dbError);
+    }
+
+    // Send Telegram notification
+    if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_ID) {
+      const text = `📩 Новая заявка с сайта!\n\n📧 Email: ${email}\n📱 Телефон: ${phone}`;
+      
+      const tgRes = await fetch(
+        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text,
+            parse_mode: 'HTML',
+          }),
+        }
+      );
+
+      if (!tgRes.ok) {
+        const tgError = await tgRes.text();
+        console.error('Telegram error:', tgError);
+      }
+    } else {
+      console.warn('Telegram credentials not configured');
     }
 
     return new Response(JSON.stringify({ success: true }), {
