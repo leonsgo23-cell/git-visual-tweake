@@ -61,15 +61,15 @@ const Hero = () => (
     <div className="max-w-4xl mx-auto text-center relative z-10">
       <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-300/40 bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest mb-8">
         <Moon size={14} className="animate-spin-slow" />
-        16-17 Февраля • В гармонии с лунным циклом
+        16-17 Февраля
       </div>
       <h1 className="text-5xl md:text-8xl font-extrabold mb-8 leading-[1] tracking-tighter text-slate-900">
         Постановка целей и построение <span className="gradient-text">системы достижения</span>
       </h1>
       <p className="text-xl md:text-2xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-        Первый день — избавление от старого и мешающего.<br />
-        Второй день — построение планов и целей на весь год.<br />
-        <span className="text-blue-600 font-semibold">Бонус: Соберём AI-ассистента, который будет помогать достичь ваших целей весь год.</span>
+        Первый день — избавление от старого и мешающего<br />
+        Второй день — построение планов и целей на весь год<br />
+        <span className="text-blue-600 font-semibold">Бонус: Соберём AI-ассистента, который будет помогать достигать ваши цели весь 2026 год</span>
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
        <a
@@ -87,7 +87,7 @@ const Hero = () => (
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-200/40 to-indigo-200/40 rounded-3xl blur-2xl opacity-50"></div>
         <div className="relative bg-white/60 backdrop-blur-xl border border-slate-200/60 rounded-3xl p-6 md:p-10 grid grid-cols-2 md:grid-cols-4 gap-6 items-center shadow-lg">
           <div className="flex flex-col items-center gap-2"><Target className="w-8 h-8 text-blue-600" /> <span className="text-xs uppercase font-bold tracking-widest text-slate-600">Цели 2026</span></div>
-          <div className="flex flex-col items-center gap-2"><Clock className="w-8 h-8 text-blue-600" /> <span className="text-xs uppercase font-bold tracking-widest text-slate-600">Ежедневный спринт</span></div>
+          <div className="flex flex-col items-center gap-2"><Clock className="w-8 h-8 text-blue-600" /> <span className="text-xs uppercase font-bold tracking-widest text-slate-600">Анализ и коррекция с помощью ИИ</span></div>
           <div className="flex flex-col items-center gap-2"><BrainCircuit className="w-8 h-8 text-blue-600" /> <span className="text-xs uppercase font-bold tracking-widest text-slate-600">AI Агент</span></div>
           <div className="flex flex-col items-center gap-2"><Stars className="w-8 h-8 text-blue-600" /> <span className="text-xs uppercase font-bold tracking-widest text-slate-600">Лунный ритм</span></div>
         </div>
@@ -103,22 +103,24 @@ const LunarSection = () => (
         <div className="relative">
           <div className="absolute -inset-10 bg-blue-300/20 blur-[100px] rounded-full"></div>
           <div className="relative space-y-8">
-            <h2 className="text-4xl md:text-5xl font-black leading-tight text-slate-900">
-              Почему 16-17 февраля — <br /><span className="text-blue-600">идеальное время?</span>
-            </h2>
+             <h2 className="text-4xl md:text-5xl font-black leading-tight text-slate-900">
+               Почему 16-17 февраля — идеальное время?
+             </h2>
             <div className="space-y-6">
-              <div className="flex gap-4 p-6 bg-white/70 rounded-2xl border border-slate-200/60 shadow-sm">
+               <div className="flex gap-4 p-6 bg-white/70 rounded-2xl border border-slate-200/60 shadow-sm">
                 <div className="w-12 h-12 shrink-0 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-sm">16.02</div>
                 <div>
                   <h4 className="text-lg font-bold mb-1 text-slate-800">День очищения (Тёмная Луна)</h4>
                   <p className="text-slate-500 text-sm">Идеальное время для аудита прошлого года, избавления от лишнего и составления стоп-листа. Энергия на спаде помогает легко отпускать ненужное и то, что мешает.</p>
+                  <p className="text-blue-600 font-bold text-sm mt-2">🕕 18:00 — 20:00</p>
                 </div>
               </div>
               <div className="flex gap-4 p-6 bg-blue-50 rounded-2xl border border-blue-200/60 ring-1 ring-blue-300/30 shadow-lg shadow-blue-200/30">
                 <div className="w-12 h-12 shrink-0 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold animate-pulse text-sm">17.02</div>
                 <div>
-                  <h4 className="text-lg font-bold mb-1 text-blue-700">Рождение нового (Новолуние. Китайский новый год)</h4>
+                  <h4 className="text-lg font-bold mb-1 text-blue-700">Рождение нового (Новолуние. Китайский Новый Год)</h4>
                   <p className="text-blue-600/70 text-sm">Точка старта. Планы, заложенные в этот день, получают поддержку естественного цикла роста. Это фундамент на весь год.</p>
+                  <p className="text-blue-700 font-bold text-sm mt-2">🕕 18:00 — 20:00</p>
                 </div>
               </div>
             </div>
@@ -133,17 +135,17 @@ const LunarSection = () => (
           <div className="p-8 bg-white/70 border border-slate-200/60 rounded-3xl space-y-4 hover:border-blue-300/60 transition-all shadow-sm">
             <Sun className="text-orange-400" />
             <h5 className="font-bold text-slate-800">Лунный календарь</h5>
-            <p className="text-slate-500 text-sm">Планирование по фазам Луны помогает синхронизировать действия с естественными циклами энергии и продуктивности.</p>
+            <p className="text-slate-500 text-sm">Намерения, заложенные в момент Новолуния, усиливаются энергией обновления — это точка максимального потенциала для старта.</p>
           </div>
           <div className="p-8 bg-white/70 border border-slate-200/60 rounded-3xl space-y-4 hover:border-blue-300/60 transition-all shadow-sm">
             <BrainCircuit className="text-purple-500" />
             <h5 className="font-bold text-slate-800">Помощник с искусственным интеллектом</h5>
-            <p className="text-slate-500 text-sm">Будет знать ваши цели, напоминать о приоритетах и не даст вам слиться с намеченного пути.</p>
+            <p className="text-slate-500 text-sm">Будет знать ваши цели, анализировать ваши действия, предлагать лучшие решения, напоминать о приоритетах и не даст вам слиться с намеченного пути.</p>
           </div>
           <div className="p-8 bg-white/70 border border-slate-200/60 rounded-3xl space-y-4 hover:border-blue-300/60 transition-all shadow-sm">
             <Calendar className="text-green-500" />
             <h5 className="font-bold text-slate-800">Мощная связка</h5>
-            <p className="text-slate-500 text-sm">Осознание своих желаний, энергия вселенной и возможности искусственного интеллекта.</p>
+            <p className="text-slate-500 text-sm">Осознание своих желаний, энергия вселенной и возможности искусственного интеллекта — всё это перемножается и многократно усиливает друг друга во благо вашим целям.</p>
           </div>
         </div>
       </div>
@@ -153,12 +155,12 @@ const LunarSection = () => (
 
 const Symptoms = () => {
   const list = [
+     "В голове постоянно ощущение перегруза и недоделанных дел",
+    "Вы понимаете, что можете больше, но распыление съедает результат",
+    "В конце недели сложно ответить себе: что реально продвинулось",
     "У вас несколько проектов, и каждый день начинается с вопроса «за что хвататься»",
     "Вы уже используете ChatGPT, но хаотично и без системы",
-    "Список задач растёт быстрее, чем вы его закрываете",
-    "В голове постоянно ощущение перегруза и недоделанных дел",
-    "Вы понимаете, что можете больше, но распыление съедает результат",
-    "В конце недели сложно ответить себе: что реально продвинулось"
+    "Список задач растёт быстрее, чем вы его закрываете"
   ];
 
   return (
@@ -194,12 +196,9 @@ const RealProblem = () => (
           <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><ShieldCheck size={140} /></div>
           <h3 className="text-slate-800 font-bold mb-8 text-3xl">Проблема в отсутствии внешней системы, которая:</h3>
           <ul className="space-y-6">
-            <li className="flex items-center gap-4 text-slate-700 text-lg">
-              <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> Видит всю систему целиком
-            </li>
-            <li className="flex items-center gap-4 text-slate-700 text-lg">
-              <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> Между задачами и направлениями
-            </li>
+             <li className="flex items-center gap-4 text-slate-700 text-lg">
+               <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> Понимает взаимосвязь между разными задачами
+             </li>
             <li className="flex items-center gap-4 text-slate-700 text-lg">
               <CheckCircle2 className="text-blue-500 shrink-0" size={24} /> Удерживает фокус на главном
             </li>
@@ -212,8 +211,7 @@ const RealProblem = () => (
           </ul>
         </div>
         <p className="leading-relaxed">
-          Чтобы не оставаться один на один с хаосом. <br />
-          Персональный ассистент на базе искусственного интеллекта управляет вниманием и приоритетами.
+          Персональный ассистент на базе искусственного интеллекта будет помогать анализировать и находить наилучшие решения для достижения ваших целей.
         </p>
       </div>
     </div>
@@ -236,8 +234,8 @@ const WhatYouGet = () => {
     "Настроите персонального AI-ассистента под себя и свои проекты",
     "Загрузите в него свой годовой план и структуру задач",
     "Научите его возвращать вас к приоритетам каждый день",
-    "Создадите систему ежедневной работы через AI",
-    "Получите готовую структуру взаимодействия с AI на каждый день"
+    "Создадите систему работы с вашими целями с помощью искусственного интеллекта",
+    "Получите готовую структуру взаимодействия с AI"
   ];
 
   return (
@@ -329,6 +327,7 @@ const Schedule = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-black mb-4 text-slate-900">Программа тренинга</h2>
+          <p className="text-blue-600 font-bold text-lg">🕕 18:00 — 20:00 (по Москве)</p>
         </div>
         <div className="grid md:grid-cols-2 gap-12">
           {days.map((item) => (
@@ -359,10 +358,10 @@ const Schedule = () => {
 
 const Author = () => {
   const achievements = [
-    { icon: <Globe className="text-blue-500" size={24} />, text: "Выручка проектов более 10 млн € и 100 000+ пользователей по всему миру" },
     { icon: <GraduationCap className="text-purple-500" size={24} />, text: "Образование в области психологии, коучинга, НЛП и эриксоновского гипноза" },
     { icon: <Award className="text-yellow-500" size={24} />, text: "Авторская программа достижения целей: 80% участников достигают целей за 60 дней" },
     { icon: <Users className="text-green-500" size={24} />, text: "Физические офисы в 5 странах, обучение предпринимателей из разных стран" },
+    { icon: <Globe className="text-blue-500" size={24} />, text: "Выручка проектов более 10 млн € и 100 000+ пользователей по всему миру" },
   ];
 
   return (
@@ -385,7 +384,7 @@ const Author = () => {
             <h3 className="text-3xl font-black mb-2 text-slate-900">Александр Обулевич</h3>
             <p className="text-blue-600 font-bold text-lg mb-6">Бизнес-коуч • Серийный предприниматель</p>
             <p className="text-slate-500 leading-relaxed">
-              Многолетний предпринимательский опыт и глубокое образование позволяют видеть слабые и сильные стороны бизнес-проектов, находить точки кратного роста и выстраивать стратегию масштабирования.
+              Многолетний предпринимательский опыт и глубокое образование позволяют видеть слабые и сильные стороны бизнес-проектов, находить точки кратного роста и выстраивать стратегию масштабирования. Более года активно погружён в мир искусственного интеллекта — внедряет системы автоматизации на базе AI в собственный бизнес, а также в проекты клиентов и партнёров.
             </p>
           </div>
 
@@ -402,7 +401,7 @@ const Author = () => {
             
             <div className="p-6 bg-gradient-to-r from-blue-100/80 to-indigo-100/80 rounded-2xl border border-blue-200/40">
               <p className="text-blue-700 font-bold text-lg leading-relaxed">
-                🎯 Сейчас вместе с партнёрами строит международную сеть Арт Студий — цель на 2026: 100 студий по всему миру.
+                🎯 Сейчас вместе с партнёрами строит международную сеть Арт Студий — цель до 2029 года: открыть 100 прибыльных Арт Студий по всему миру.
               </p>
             </div>
           </div>
@@ -459,8 +458,8 @@ const WhyAI = () => (
       <h2 className="text-4xl md:text-5xl font-black mb-8 uppercase tracking-tighter text-slate-900">Как искусственный интеллект будет вам помогать?</h2>
       <div className="grid sm:grid-cols-3 gap-4 mb-16">
         <div className="p-6 bg-white/70 rounded-2xl border border-slate-200/60 font-bold uppercase tracking-widest text-xs text-slate-600 shadow-sm">AI не устаёт</div>
-        <div className="p-6 bg-white/70 rounded-2xl border border-slate-200/60 font-bold uppercase tracking-widest text-xs text-slate-600 shadow-sm">Не забывает</div>
-        <div className="p-6 bg-white/70 rounded-2xl border border-slate-200/60 font-bold uppercase tracking-widest text-xs text-slate-600 shadow-sm">Не отвлекается</div>
+        <div className="p-6 bg-white/70 rounded-2xl border border-slate-200/60 font-bold uppercase tracking-widest text-xs text-slate-600 shadow-sm">AI не забывает</div>
+        <div className="p-6 bg-white/70 rounded-2xl border border-slate-200/60 font-bold uppercase tracking-widest text-xs text-slate-600 shadow-sm">AI не отвлекается</div>
       </div>
       <div className="space-y-8 text-xl text-slate-500 leading-relaxed mb-16">
         <p className="text-2xl font-medium">Вы превращаете его в персонального ассистента, который:</p>
@@ -501,9 +500,6 @@ const Audience = () => (
           </h3>
            <ul className="space-y-6">
              <li className="flex gap-4 text-lg text-slate-600 font-medium">
-                Предприниматель или руководитель с несколькими направлениями
-             </li>
-             <li className="flex gap-4 text-lg text-slate-600 font-medium">
                 Устали от постоянного ощущения «недоделанных дел»
              </li>
              <li className="flex gap-4 text-lg text-slate-600 font-medium">
@@ -511,6 +507,9 @@ const Audience = () => (
              </li>
              <li className="flex gap-4 text-lg text-slate-600 font-medium">
                 Уже пользуетесь ChatGPT, но чувствуете, что используете его на 5%
+             </li>
+             <li className="flex gap-4 text-lg text-slate-600 font-medium">
+                Предприниматель или руководитель с несколькими направлениями
              </li>
            </ul>
         </div>
@@ -521,10 +520,10 @@ const Audience = () => (
           </h3>
           <ul className="space-y-6">
             <li className="flex gap-4 text-lg text-slate-600 font-medium">
-               Ищете просто мотивацию или «вдохновляющие лекции»
+               Ищете просто «вдохновляющие лекции»
             </li>
             <li className="flex gap-4 text-lg text-slate-600 font-medium">
-               Не готовы выделить 2 полных дня на глубокую настройку
+               Не готовы выделить 2 дня на глубокую настройку
             </li>
             <li className="flex gap-4 text-lg text-slate-600 font-medium">
                Ожидаете, что AI за вас сделает всю физическую работу
@@ -604,6 +603,14 @@ const FAQ = () => {
     {
       question: "Во сколько и как?",
       answer: "С 18:00 до 20:00. Созвон в Zoom. Ссылка на Zoom придёт вам на почту за час до начала."
+    },
+    {
+      question: "Что нужно подготовить перед началом тренинга?",
+      answer: "Всего три вещи: оплаченный доступ к тренингу, компьютер или телефон с доступом в интернет и подписка ChatGPT (Plus или Pro). Это основные инструменты, с которыми мы будем работать."
+    },
+    {
+      question: "Можно ли участвовать с бесплатной версией ChatGPT?",
+      answer: "К сожалению, нет. Для интенсивной практической работы на тренинге возможностей бесплатной версии будет недостаточно — нужна подписка Plus или Pro."
     }
   ];
 
